@@ -41,7 +41,7 @@ public class Send_Mail {
             t.connect (from_mail, "gmailpass");   //  Insert gmail password
             t.sendMessage(mensaje, mensaje.getAllRecipients());
             t.close ();
-            System.out.println("=====Mail sent successfully=====");
+            System.out.println("===== Mail sent successfully =====");
         } catch (MessagingException ex) {
             Logger.getLogger(Send_Mail.class.getName()).log(Level.SEVERE, null, ex);
         }
