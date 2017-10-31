@@ -40,7 +40,7 @@ public class MySQL {
             dbc = MySQL_Open_Connection("root", "", DB);
             System.out.println("== Database " + DB + " successfully created ==");
             
-            Query = "CREATE TABLE " + Table + ""
+            Query = "CREATE TABLE " + Table
                     + "(name CHAR (30) NOT NULL, surname CHAR (30) NOT NULL,"
                     + "mail CHAR (50) NOT NULL, username CHAR(45), changedpass BOOL );";
             st = dbc.createStatement();
