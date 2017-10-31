@@ -13,6 +13,7 @@ public class CSV_Reader {
     LDAP c = new LDAP();
     MySQL db = new MySQL();
     LDAPConnection lc = new LDAPConnection();
+    Send_Mail sm = new Send_Mail();
     Connection dbc;
     
     void Data_Upload ( String getManager, String getPassword ) throws FileNotFoundException, IOException
@@ -30,6 +31,7 @@ public class CSV_Reader {
             String Username [] = Data_Read [2].split( "@" );        //  Username
             c.User_Data( lc, Data_Read [0], Data_Read [1], Data_Read [2], Username [0] );
             db.insertData( dbc, "userstatus", Data_Read [0], Data_Read [1], Data_Read [2], Username [0] );
+            sm.sendmail(Username [0], "randompass", Data_Read [2]);
         }
         Buffer.close();
         c.Close_Connection( lc );
